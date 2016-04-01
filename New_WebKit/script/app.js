@@ -9,13 +9,15 @@ el.ondragover = function () {
 }
 el.ondragleave = function () {
 	this.className = "";
-	this.innerHTML = "Drop your icon here ^^";
+	this.innerHTML = "Drop your icon here";
 	return false;
 }
 el.ondrop = function (e) {
 	e.preventDefault();
 	console.log(e.dataTransfer);
 	for (var i =0; i < e.dataTransfer.file.lenght; ++i) {
+		var file = e.dataTransfer.files[i].path;
+		consol.log(file);
 
 	}
 }
